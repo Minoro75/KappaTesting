@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                    android:orientation="vertical">
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/news_title"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                  tools:text="Kappa some dummy text"  />
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/news_date"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    tools:text="07/06/2019"/>
+    </LinearLayout>
+</LinearLayout>
