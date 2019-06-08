@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Most Emailed"))
         tabLayout.addTab(tabLayout.newTab().setText("Most Shared"))
         tabLayout.addTab(tabLayout.newTab().setText("Most Viewed"))
+        tabLayout.addTab(tabLayout.newTab().setText("Bookmarks"))
 
         tabLayout.tabGravity=TabLayout.GRAVITY_FILL
         //TODO:ADAPTER FOR TABS

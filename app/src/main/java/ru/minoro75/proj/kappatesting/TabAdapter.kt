@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import ru.minoro75.proj.kappatesting.fragments.BookmarksFragment
 import ru.minoro75.proj.kappatesting.fragments.EmailedFragment
 import ru.minoro75.proj.kappatesting.fragments.SharedFragment
 import ru.minoro75.proj.kappatesting.fragments.ViewedFragment
@@ -14,6 +15,7 @@ class TabAdapter(private val myContext: Context, fm:FragmentManager, internal va
         0-> return EmailedFragment.newInstance()
         1-> return SharedFragment.newInstance()
         2-> return ViewedFragment.newInstance()
+        3 -> return BookmarksFragment.newInstance()
         else-> return null
     }
     }
