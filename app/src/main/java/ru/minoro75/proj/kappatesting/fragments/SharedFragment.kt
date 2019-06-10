@@ -15,16 +15,7 @@ import ru.minoro75.proj.kappatesting.data.NYTNewsItem
 
 
 class SharedFragment : Fragment() {
-    private val mNewsList = listOf(
-        NYTNewsResponse(
-            listOf(
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd"))
-            )
-        )
-    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance =true
@@ -41,7 +32,7 @@ class SharedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         shared_list.apply {
             layoutManager=LinearLayoutManager(activity)
-            adapter=NewsAdapter(mNewsList)
+            adapter = NewsAdapter()
         }
     }
 

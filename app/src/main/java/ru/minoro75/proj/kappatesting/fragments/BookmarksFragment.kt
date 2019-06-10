@@ -25,16 +25,7 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class BookmarksFragment : Fragment() {
-    private val mNewsList = listOf(
-        NYTNewsResponse(
-            listOf(
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd")),
-                NYTNewsItem("fsfsdf", ("fsdfsd"))
-            )
-        )
-    )
+    val mNewsList = NYTNewsResponse("FD", 22, listOf(NYTNewsItem("DSD", "33313")), "FGDFG")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +44,7 @@ class BookmarksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bookmarks_list.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = NewsAdapter(mNewsList)
+            adapter = NewsAdapter()
         }
     }
 
