@@ -19,10 +19,8 @@ import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
 import ru.minoro75.proj.kappatesting.networking.ApiFactory
 
 class EmailedFragment : Fragment() {
-    private val mNewsList = listOf(
-        NYTNewsResponse()
-        var recyclerView : RecyclerView
-            lateinit var adapter:NewsAdapter
+    private val mNewsList = ApiFactory.getClient.getEmailedNews().request().body()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
