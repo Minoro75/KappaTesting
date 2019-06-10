@@ -10,15 +10,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_shared.*
 import ru.minoro75.proj.kappatesting.NewsAdapter
 import ru.minoro75.proj.kappatesting.R
-import ru.minoro75.proj.kappatesting.data.News
+import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
+import ru.minoro75.proj.kappatesting.data.NYTNewsItem
+
 
 class SharedFragment : Fragment() {
     private val mNewsList = listOf(
-        News("s","the wdd","1"),
-        News("somebody once  me","the wold","32d"),
-        News("somebos told me","the wold","d321"),
-        News(" once ame","the wold","312321"),
-        News("soay once told me","the wold","311")
+        NYTNewsResponse(
+            listOf(
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd"))
+            )
+        )
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

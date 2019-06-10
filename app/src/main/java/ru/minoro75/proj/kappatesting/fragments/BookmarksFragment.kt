@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.fragment_bookmarks.*
 import ru.minoro75.proj.kappatesting.NewsAdapter
 
 import ru.minoro75.proj.kappatesting.R
-import ru.minoro75.proj.kappatesting.data.News
+import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
+import ru.minoro75.proj.kappatesting.data.NYTNewsItem
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,12 +26,14 @@ private const val ARG_PARAM2 = "param2"
  */
 class BookmarksFragment : Fragment() {
     private val mNewsList = listOf(
-        News("somebody once told me", "the wold", "1"),
-        News("somebody once  me", "the wold", "321"),
-        News("somebody once told me", "wold", "312321"),
-        News("somebody once told me", "the wold", "312321"),
-        News(" once told me", "the wold", "312321"),
-        News("somebody once told me", "the wold", "311")
+        NYTNewsResponse(
+            listOf(
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd"))
+            )
+        )
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

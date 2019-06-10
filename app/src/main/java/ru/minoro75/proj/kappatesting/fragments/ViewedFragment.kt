@@ -10,16 +10,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_viewed.*
 import ru.minoro75.proj.kappatesting.NewsAdapter
 import ru.minoro75.proj.kappatesting.R
-import ru.minoro75.proj.kappatesting.data.News
+import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
+import ru.minoro75.proj.kappatesting.data.NYTNewsItem
+
 
 class ViewedFragment : Fragment() {
     private val mNewsList = listOf(
-        News("some","dumb","shit"),
-        News("sogdy once  me","the gd","3g1"),
-        News("somggody once told me","gggg","31232fsf1"),
-        News("somebodfffatold me","thff","3fasf21"),
-        News(" fsaold me","the wold","312321"),
-        News("somebody once told me","the wold","311")
+        NYTNewsResponse(
+            listOf(
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd")),
+                NYTNewsItem("fsfsdf", ("fsdfsd"))
+            )
+        )
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
