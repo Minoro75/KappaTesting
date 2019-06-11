@@ -30,9 +30,15 @@ class SharedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mNews = listOf(
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds")
+        )
         shared_list.apply {
             layoutManager=LinearLayoutManager(activity)
-            adapter = NewsAdapter()
+            adapter = NewsAdapter(mNews)
         }
     }
 

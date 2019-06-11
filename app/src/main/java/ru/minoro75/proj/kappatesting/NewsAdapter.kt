@@ -7,24 +7,25 @@ import androidx.recyclerview.widget.RecyclerView
 import org.jetbrains.anko.find
 import ru.minoro75.proj.kappatesting.data.NYTNewsItem
 import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
+import ru.minoro75.proj.kappatesting.data.NewsApi
 import ru.minoro75.proj.kappatesting.networking.ApiFactory
 
 
-class NewsAdapter : RecyclerView.Adapter<NewsViewHolder>() {
-    private var newsItems = ApiFactory.getClient.getEmailedNews().execute().body()?.results
+class NewsAdapter(var response: List<NYTNewsItem>) : RecyclerView.Adapter<NewsViewHolder>() {
+    //private var newsItems = NewsApi.getApi().getEmailedNews().body()?.results
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
     val inflater = LayoutInflater.from(parent.context)
         return NewsViewHolder(inflater,parent)
     }
 
     override fun getItemCount(): Int {
-        return newsItems!!.size
+        return response.size
     }
 
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
-        holder.bind(newsItems?.get(position))
+        holder.bind(response?.get(position))
     }
 
 

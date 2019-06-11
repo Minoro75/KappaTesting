@@ -17,6 +17,7 @@ import ru.minoro75.proj.kappatesting.NewsAdapter
 import ru.minoro75.proj.kappatesting.R
 import ru.minoro75.proj.kappatesting.data.NYTNewsItem
 import ru.minoro75.proj.kappatesting.data.NYTNewsResponse
+import ru.minoro75.proj.kappatesting.data.NewsApi
 import ru.minoro75.proj.kappatesting.networking.ApiFactory
 
 class EmailedFragment : Fragment() {
@@ -35,10 +36,16 @@ class EmailedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
+        // val mNews = NewsApi.getApi().getEmailedNews().body()?.results
+        val mNews = listOf(
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds"),
+            NYTNewsItem("dsd", "dsds")
+        )
         emailed_list.apply {
-            adapter = NewsAdapter()
+            adapter = NewsAdapter(mNews!!)
             layoutManager = LinearLayoutManager(context)
         }
     }
