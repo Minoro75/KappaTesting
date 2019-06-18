@@ -2,6 +2,7 @@ package ru.minoro75.proj.kappatesting.data
 
 
 import com.google.gson.GsonBuilder
+import com.nytclient.data.api.ApiResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -11,10 +12,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface NewsApi {
-    @GET("svc/mostpopular/v2/emailed/7")
-    fun getEmailedNews(): Response<NYTNewsResponse>
+    /*most emailed request*/
+    @GET("svc/mostpopular/v2/emailed/7q")
+    fun getEmailedNews(): ApiResponse<NYTNewsResponse>
 
     companion object {
+        /*object for init a api call with retrofit2 */
         var BASE_URL: String = "https://api.nytimes.com/"
         fun getApi(): NewsApi {
             var interceptor = HttpLoggingInterceptor()

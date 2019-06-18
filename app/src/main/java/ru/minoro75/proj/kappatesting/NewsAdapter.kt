@@ -11,7 +11,7 @@ import ru.minoro75.proj.kappatesting.data.NewsApi
 import ru.minoro75.proj.kappatesting.networking.ApiFactory
 
 
-class NewsAdapter(var response: List<NYTNewsItem>) : RecyclerView.Adapter<NewsViewHolder>() {
+class NewsAdapter(var newsList: List<NYTNewsItem> = listOf()) : RecyclerView.Adapter<NewsViewHolder>() {
     //private var newsItems = NewsApi.getApi().getEmailedNews().body()?.results
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
     val inflater = LayoutInflater.from(parent.context)
@@ -19,15 +19,19 @@ class NewsAdapter(var response: List<NYTNewsItem>) : RecyclerView.Adapter<NewsVi
     }
 
     override fun getItemCount(): Int {
-        return response.size
+        return newsList.size
     }
 
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
-        holder.bind(response?.get(position))
+        holder.bind(newsList?.get(position))
     }
 
+    fun setNewsItems(newsList: List<NYTNewsItem>) {
+        this.newsList = newsList
+        notifyDataSetChanged()
+    }
 
 }
 class NewsViewHolder(inflater: LayoutInflater, parent:ViewGroup):RecyclerView.ViewHolder(

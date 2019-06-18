@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //TODO: USE ANKO HERE
+
         viewPager = findViewById(R.id.pager)
         tabLayout = findViewById(R.id.tabs)
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Bookmarks"))
 
         tabLayout.tabGravity=TabLayout.GRAVITY_FILL
-        //TODO:ADAPTER FOR TABS
+
         val adapter = TabAdapter(this,supportFragmentManager,tabLayout.tabCount)
         viewPager.adapter =adapter
 
